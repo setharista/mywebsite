@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio Website</title>
+    <style>
+        /* Elegant Font */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fdf6e3; /* Light cream background */
+            color: #2f2f2f; /* Dark gray text for readability */
+            line-height: 1.8;
+        }
+
+        /* Header with Dual-Tone Background */
+        header {
+            background: linear-gradient(135deg, #3e2723, #1b1b1b); /* Elegant dark brown to black gradient */
+            color: #ffd700; /* Gold text color */
+            text-align: center;
+            padding: 2em 0;
+            border-bottom: 5px solid #b8860b; /* Gold border */
+        }
+
+        /* Dual-tone effect on text visibility */
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(to right, #ffd700, #b8860b); /* Gold to dark gold gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1b1b1b; /* Black navigation background */
+            padding: 1em;
+        }
+
+        /* Link Styles */
+        nav a {
+            color: #ffd700; /* Gold link color */
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* Dotted-line hover effect */
+        nav a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffd700;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 2px dotted #ffd700;
+        }
+
+        nav a:hover::before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* Section Styles with Dual-tone Backgrounds */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: linear-gradient(135deg, #fdf6e3, #e0c3a3); /* Cream to light brown */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in;
+            border-left: 4px dotted #b8860b; /* Dotted line border for sections */
+        }
+
+        h2 {
+            background: linear-gradient(to right, #3e2723, #1b1b1b); /* Deep brown to black gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #2f2f2f; /* Dark gray for text */
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px 0;
+            border: 5px solid #ffd700; /* Gold border for profile image */
+        }
+
+        /* Image Gallery */
+        .project-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .project-gallery img {
+            width: 30%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            border: 2px dotted #ffd700; /* Dotted border on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #3e2723; /* Deep brown footer */
+            color: #ffd700; /* Gold text */
+            padding: 1.5em 0;
+            margin-top: 20px;
+            border-top: 5px solid #b8860b; /* Gold border */
+        }
+
+        /* Input Fields and Button */
+        input[type="email"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #3e2723; /* Deep brown button */
+            color: #ffd700; /* Gold text */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b8860b; /* Gold hover effect */
+            color: white;
+            border: 2px dotted #ffd700; /* Dotted border on hover */
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .project-gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <img src="C:\Users\User\TAEKWONDO\IMG-20230714-WA0100.jpg" alt="Profile Picture" class="profile-img">
+        <p>ARISTA SETH |STUDENT AT UNIVERSITY OF ENGINEERING AND MANAGEMENT, KOLKATA</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#paper/patent publications">Paper/Patent Publications</a>
+        <a href="#awards and achievements">Awards and Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#membership">Membership</a>
+        <a href="#research thrust area">Research Thrust Area</a>
+        <a href="#poster/paper presentation">Poster/Paper Presentation</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to my personal website. Here you will find details about my academic background, projects, and professional experience.</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello my name is Arista Seth. I am a first-year student at University of Engineering and Management,Kolkata, West Bengal, studing Computer Science Engineering with specialization in Cybersecurity, Internet of Things, Blockchain.Outside of academics I enjoy reading books and learing different languages and can speak English, Bengali, Hindi, Italian and French. I am also an international Taekwondo player and medalist. Besides this i am an dancer, singer and national level rifle shooter.</p>
+    </section>
+
+    <!-- Educational Background Section -->
+    <section id="education">
+        <h2>Educational Background</h2>
+        <p>Completed my 10th standard from Mahadevi Birla Shishu Vihar, Kolkata in the year 2022 and 12th from Madadevi Birla World Academy,Kolkata in 2024.I am currently pursuing my B.Tech degree on Computer Science Engineering with specialization in Cybersecurity, internet of Things and Blockchain from University of Engineering and Management, Kolkata, West Bengal. </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <p></p>
+    </section>
+
+     <!-- Paper/Patent Publications Section -->
+    <section id="paper/patent publications">
+        <h2>Paper/Patent Publications</h2>
+        <p></p>
+    </section>
+
+    <!-- Awards and Achievements Section -->
+    <section id="awards and achievements">
+        <h2>Awards and Achievements</h2>
+        <p></p>
+    </section>
+
+    <!-- Projects Section with Image Gallery -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>RADAR System: A live working model of radar system which detects motion and sounds alarm when something is moving within the range .</p>
+        <div class="project-gallery">
+            <img src="C:\Users\User\TAEKWONDO\IMG-20241025-WA0001.jpg" alt="Project 1">
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership">
+        <h2>Membership</h2>
+        <p>I am an active member of IRIS in Photography and Anchoring team and also an part of Rhythmic Syndrome.</p>
+    </section>
+
+    <!-- Research Thrust Area Section -->
+    <section id="research thrust area">
+        <h2>Research Thrust Area</h2>
+        <p></p>
+    </section>
+
+    <!-- List of Events (Organized/Attended) Section -->
+    <section id="list of events (organized/attended)">
+        <h2>List of Events (Organized/Attended)</h2>
+        <p>Participated in UEMKCON,as an delegate representing Greece in WHA Organization.</p>
+    </section>
+
+    <!--Poster/Per Presentation with Image Gallery -->
+    <section id="Poster/ Papaer Presentation">
+        <h2>Poster/Paper Presentation</h2>
+        <p>Poster on Big Bang Theory and Importance of Artificial Intelligence in Medical Science</p>
+        <div class="poster/paper presentation-gallery">
+             <img src="C:\Users\User\Desktop\1200px-CMB_Timeline300_no_WMAP.jpg" alt="Project/Paper Presentation 1">
+             <img src="C:\Users\User\Desktop\IMG-20241005-WA0013.jpg" alt="Project/Paper Presentation 2">
+        </div>
+    </section>
+
+    <!-- Courses Completed Section -->
+    <section id="Courses Completed">
+        <h2>Courses Completed</h2>
+        <p>Completed "Foundations of Cybersecuirity" course from Coursera and "Developing Softskill and Personallity" course from NPTEL.</p>
+    </section>
+
+    <!-- Contact Section with Advanced Validation -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>To know more about me call at: 77980312509/8697726906</p> 
+            <p>Email: aristaseth2006@gmail.com</p>
